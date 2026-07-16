@@ -39,7 +39,6 @@ public class Barbearia {
     private String logoUrl;
 
     @Enumerated(EnumType.STRING)
-
     private Tema tema = Tema.ESCURO;
 
     private LocalDateTime dataCriacao;
