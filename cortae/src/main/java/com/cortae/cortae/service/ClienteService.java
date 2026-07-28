@@ -4,7 +4,6 @@ import com.cortae.cortae.model.Agendamento;
 import com.cortae.cortae.model.Cliente;
 import com.cortae.cortae.repository.AgendamentoRepository;
 import com.cortae.cortae.repository.ClienteRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -16,11 +15,13 @@ import java.util.Optional;
 @Service
 public class ClienteService {
     
-    @Autowired
-    private ClienteRepository clienteRepository;
+    private final ClienteRepository clienteRepository;
+    private final AgendamentoRepository agendamentoRepository;
 
-    @Autowired
-    private AgendamentoRepository agendamentoRepository;
+    public ClienteService(ClienteRepository clienteRepository, AgendamentoRepository agendamentoRepository) {
+        this.clienteRepository = clienteRepository;
+        this.agendamentoRepository = agendamentoRepository;
+    }
 
     public Cliente criarCliente(Cliente novoCliente) {
         

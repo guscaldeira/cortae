@@ -2,7 +2,6 @@ package com.cortae.cortae.service;
 
 import com.cortae.cortae.model.Servico;
 import com.cortae.cortae.repository.ServicoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,8 +10,11 @@ import java.util.Optional;
 @Service
 public class ServicoService {
 
-    @Autowired
-    private ServicoRepository servicoRepository;
+    private final ServicoRepository servicoRepository;
+
+    public ServicoService(ServicoRepository servicoRepository) {
+        this.servicoRepository = servicoRepository;
+    }
 
     public Servico criarServico(Servico novoServico) {
 

@@ -2,7 +2,6 @@ package com.cortae.cortae.service;
 
 import com.cortae.cortae.model.Usuario;
 import com.cortae.cortae.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
@@ -12,8 +11,11 @@ import java.util.Optional;
 @Service
 public class UsuarioService {
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+    private final UsuarioRepository usuarioRepository;
+
+    public UsuarioService(UsuarioRepository usuarioRepository) {
+        this.usuarioRepository = usuarioRepository;
+    }
     
     public Usuario cadastrarUsuario(Usuario novoUsuario) {
         Optional<Usuario> usuarioExistente = usuarioRepository.findByEmail(novoUsuario.getEmail());

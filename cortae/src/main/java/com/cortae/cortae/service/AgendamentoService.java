@@ -2,7 +2,6 @@ package com.cortae.cortae.service;
 
 import com.cortae.cortae.model.Agendamento;
 import com.cortae.cortae.repository.AgendamentoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -13,8 +12,11 @@ import java.util.Optional;
 public class AgendamentoService {
 
 
-    @Autowired
-    private AgendamentoRepository agendamentoRepository;
+    private final AgendamentoRepository agendamentoRepository;
+
+    public AgendamentoService(AgendamentoRepository agendamentoRepository) {
+        this.agendamentoRepository = agendamentoRepository;
+    }
 
     public Agendamento criarAgendamento(Agendamento novoAgendamento) {
 

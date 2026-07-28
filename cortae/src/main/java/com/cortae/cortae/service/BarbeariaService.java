@@ -2,7 +2,6 @@ package com.cortae.cortae.service;
 
 import com.cortae.cortae.model.Barbearia;
 import com.cortae.cortae.repository.BarbeariaRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -10,8 +9,11 @@ import java.util.Optional;
 @Service
 public class BarbeariaService {
 
-    @Autowired
-    private BarbeariaRepository barbeariaRepository;
+    private final BarbeariaRepository barbeariaRepository;
+
+    public BarbeariaService(BarbeariaRepository barbeariaRepository) {
+        this.barbeariaRepository = barbeariaRepository;
+    }
 
     public Barbearia criarBarbearia(Barbearia novaBarbearia) {
 

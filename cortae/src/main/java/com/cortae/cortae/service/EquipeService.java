@@ -2,7 +2,6 @@ package com.cortae.cortae.service;
 
 import com.cortae.cortae.model.Equipe;
 import com.cortae.cortae.repository.EquipeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,8 +10,11 @@ import java.util.Optional;
 @Service
 public class EquipeService {
     
-    @Autowired
-    private EquipeRepository equipeRepository;
+    private final EquipeRepository equipeRepository;
+
+    public EquipeService(EquipeRepository equipeRepository) {
+        this.equipeRepository = equipeRepository;
+    }
 
     public Equipe criarMembro(Equipe novoMembro) {
 
