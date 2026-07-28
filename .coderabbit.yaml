@@ -1,0 +1,27 @@
+language : "pt-BR"
+
+reviews:
+  path_filters:
+    # Inclui tudo por padrão
+    - "**"
+
+    # Ignora arquivos e pastas da IDE
+    - "!.vscode/**"
+    - "!.idea/**"
+
+    # Ignora Maven Wrapper
+    - "!.mvn/**"
+    - "!mvnw"
+    - "!mvnw.cmd"
+
+    # Ignora arquivos gerados
+    - "!target/**"
+
+    # Ignora arquivos de configuração
+    - "!README.md"
+    - "!LICENSE"
+    - "!.gitattributes"
+    - "!.gitignore"
+
+    # Se quiser ignorar o application.properties
+    - "!src/main/resources/application.properties"
