@@ -1,5 +1,6 @@
 package com.cortae.cortae.controller;
 
+import com.cortae.cortae.exception.NegocioException;
 import com.cortae.cortae.model.Usuario;
 import com.cortae.cortae.service.UsuarioService;
 import org.springframework.stereotype.Controller;
@@ -31,7 +32,7 @@ public class UsuarioController {
         try {
             usuarioService.cadastrarUsuario(usuario);
             return "redirect:/login"; 
-        } catch (RuntimeException e) {
+        } catch (NegocioException e) {
             model.addAttribute("erro", e.getMessage());
             return "cadastro";
         }
@@ -53,7 +54,7 @@ public class UsuarioController {
             return "redirect:/dashboard";
         } else {
 
-            model.addAttribute("erro", "Email ou senha invalidos.");
+            model.addAttribute("erro", "Email ou senha inválidos.");
             return "login";
         }
     }

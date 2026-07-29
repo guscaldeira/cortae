@@ -1,6 +1,9 @@
 package com.cortae.cortae.controller;
 
+import com.cortae.cortae.exception.NegocioException;
+import com.cortae.cortae.model.Barbearia;
 import com.cortae.cortae.model.Cliente;
+import com.cortae.cortae.service.BarbeariaService;
 import com.cortae.cortae.service.ClienteService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,9 +17,11 @@ public class ClienteController {
 
 
     private final ClienteService clienteService;
+    private final BarbeariaService barbeariaService;
 
-    public ClienteController(ClienteService clienteService) {
+    public ClienteController(ClienteService clienteService, BarbeariaService barbeariaService) {
         this.clienteService = clienteService;
+        this.barbeariaService = barbeariaService;
     }
 
     @GetMapping("/barbearia/{barbeariaId}")
@@ -43,10 +48,13 @@ public class ClienteController {
     @PostMapping("/novo/{barbeariaId}")
     public String processarCriacao(@PathVariable Long barbeariaId, @ModelAttribute Cliente cliente, Model model) {
         try {
+            Barbearia barbearia = barbeariaService.buscarPorId(barbeariaId).orElseThrow(() -> new NegocioException("Barbearia não encontrada."));
+            cliente.setBarbearia(barbearia);
             clienteService.criarCliente(cliente);
             return "redirect:/cliente/barbearia/" + barbeariaId;
         } catch (RuntimeException e) {
             model.addAttribute("erro", e.getMessage());
+            model.addAttribute("barbeariaId", barbeariaId);
             return "cliente-novo";
         }
     }

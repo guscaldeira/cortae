@@ -1,5 +1,6 @@
 package com.cortae.cortae.service;
 
+import com.cortae.cortae.exception.NegocioException;
 import com.cortae.cortae.model.Usuario;
 import com.cortae.cortae.repository.UsuarioRepository;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -21,11 +22,15 @@ public class UsuarioService {
         Optional<Usuario> usuarioExistente = usuarioRepository.findByEmail(novoUsuario.getEmail());
 
         if (usuarioExistente.isPresent()) {
-            throw new RuntimeException("Já existe um usuário cadastrado com esse email.");
-        } try {
+            // Antes: throw new RuntimeException(...)
+            throw new NegocioException("Já existe um usuário cadastrado com esse email.");
+        }
+
+        try {
             return usuarioRepository.save(novoUsuario);
         } catch (DataIntegrityViolationException e) {
-            throw new RuntimeException("Já existe um usuário cadastrado com esse email.");
+            // Antes: throw new RuntimeException(...)
+            throw new NegocioException("Já existe um usuário cadastrado com esse email.");
         }
     }
 

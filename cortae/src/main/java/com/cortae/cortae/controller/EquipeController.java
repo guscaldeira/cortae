@@ -5,15 +5,20 @@ import com.cortae.cortae.service.EquipeService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import com.cortae.cortae.model.Barbearia;
+import com.cortae.cortae.service.BarbeariaService;
+import com.cortae.cortae.exception.NegocioException;
 
 @Controller
 @RequestMapping("/equipe")
 public class EquipeController {
 
     private final EquipeService equipeService;
+    private final BarbeariaService barbeariaService;
 
-    public EquipeController(EquipeService equipeService) {
+    public EquipeController(EquipeService equipeService, BarbeariaService barbeariaService) {
         this.equipeService = equipeService;
+        this.barbeariaService = barbeariaService;
     }
 
     @GetMapping("/barbearia/{barbeariaId}")
@@ -33,10 +38,13 @@ public class EquipeController {
     @PostMapping("/nova/{barbeariaId}")
     public String processarCriacao(@PathVariable Long barbeariaId, @ModelAttribute Equipe membro, Model model) {
         try {
+            Barbearia barbearia = barbeariaService.buscarPorId(barbeariaId).orElseThrow(() -> new NegocioException("Barbearia não encontrada."));
+            membro.setBarbearia(barbearia);
             equipeService.criarMembro(membro);
             return "redirect:/equipe/barbearia/" + barbeariaId;
         } catch (RuntimeException e) {
             model.addAttribute("erro", e.getMessage());
+            model.addAttribute("barbeariaId", barbeariaId);
             return "equipe-nova";
         }
     }

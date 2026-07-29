@@ -1,12 +1,16 @@
 package com.cortae.cortae.controller;
 
 import com.cortae.cortae.model.Agendamento;
+import com.cortae.cortae.model.Barbearia;
 import com.cortae.cortae.service.AgendamentoService;
+import com.cortae.cortae.service.BarbeariaService;
+import com.cortae.cortae.exception.NegocioException;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.time.LocalDateTime;
 
@@ -15,9 +19,11 @@ import java.time.LocalDateTime;
 public class AgendamentoController {
     
     private final AgendamentoService agendamentoService;
+    private final BarbeariaService barbeariaService;
 
-    public AgendamentoController(AgendamentoService agendamentoService) {
+    public AgendamentoController(AgendamentoService agendamentoService, BarbeariaService barbeariaService) {
         this.agendamentoService = agendamentoService;
+        this.barbeariaService = barbeariaService;
     }
 
     @GetMapping("/barbearia/{barbeariaId}")
@@ -43,6 +49,8 @@ public class AgendamentoController {
     @PostMapping("/novo/{barbeariaId}")
     public String processarCriacao(@PathVariable Long barbeariaId, @ModelAttribute Agendamento agendamento, Model model) {
         try {
+            Barbearia barbearia = barbeariaService.buscarPorId(barbeariaId).orElseThrow(() -> new NegocioException("Barbearia não encontrada."));
+            agendamento.setBarbearia(barbearia);
             agendamentoService.criarAgendamento(agendamento);
             return "redirect:/agendamento/barbearia/" + barbeariaId;
         } catch (RuntimeException e) {
@@ -53,23 +61,23 @@ public class AgendamentoController {
     }
 
     @PostMapping("/reagendar/{id}")
-    public String reagendar(@PathVariable Long id, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") LocalDateTime novoInicio, @RequestParam Long barbeariaId, Model model) {
+    public String reagendar(@PathVariable Long id, @RequestParam @DateTimeFormat(pattern = "yyyy-MM-dd'T'HH:mm") LocalDateTime novoInicio, @RequestParam Long barbeariaId, RedirectAttributes redirectAttributes) {
         try {
             agendamentoService.reagendar(id, novoInicio);
             return "redirect:/agendamento/barbearia/" + barbeariaId;
         } catch (RuntimeException e) {
-            model.addAttribute("erro", e.getMessage());
+            redirectAttributes.addFlashAttribute("erro", e.getMessage());
             return "redirect:/agendamento/barbearia/" + barbeariaId;
         }
     }
 
     @PostMapping("/status/{id}")
-    public String alterarStatus(@PathVariable Long id, @RequestParam Agendamento.Status novoStatus, @RequestParam Long barbeariaId, Model model) {
+    public String alterarStatus(@PathVariable Long id, @RequestParam Agendamento.Status novoStatus, @RequestParam Long barbeariaId, RedirectAttributes redirectAttributes) {
         try {
             agendamentoService.alterarStatus(id, novoStatus);
             return "redirect:/agendamento/barbearia/" + barbeariaId;
         } catch (RuntimeException e) {
-            model.addAttribute("erro", e.getMessage());
+            redirectAttributes.addFlashAttribute("erro", e.getMessage());
             return "redirect:/agendamento/barbearia/" + barbeariaId;
         }
     }
