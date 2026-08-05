@@ -9,8 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import java.util.Optional;
-
 @Controller
 public class UsuarioController {
     
@@ -43,22 +41,6 @@ public class UsuarioController {
     public String mostrarLogin() {
         return "login"; 
     }
-
-    @PostMapping("/login")
-    public String processarLogin(@ModelAttribute Usuario usuario, Model model) {
-        
-        Optional<Usuario> usuarioEncontrado = usuarioService.buscarPorEmail(usuario.getEmail());
-
-        if (usuarioEncontrado.isPresent() && usuarioEncontrado.get().getSenha().equals(usuario.getSenha())) {
-            
-            return "redirect:/dashboard";
-        } else {
-
-            model.addAttribute("erro", "Email ou senha inválidos.");
-            return "login";
-        }
-    }
-
 }
 
 
