@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Cortaê</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+    <link th:href="@{/css/login.css}" rel="stylesheet">
+</head>
+<body>
+
+<div class="auth-page">
+    <div class="auth-card">
+
+        <div class="auth-logo">Cortaê</div>
+        <div class="auth-subtitulo">Gestão de Excelência para sua Barbearia</div>
+        <div class="auth-divisor-topo"></div>
+        <div class="auth-titulo">Bem-vindo de volta!</div>
+
+        <div class="auth-erro" th:if="${param.error}">
+            Email ou senha inválidos.
+        </div>
+
+        <form th:action="@{/login}" method="post">
+            <div class="mb-3">
+                <label class="auth-label" for="email">E-mail</label>
+                <div class="auth-input-wrapper">
+                    <i class="bi bi-envelope icone-esquerda"></i>
+                    <input type="email" class="auth-input" id="email" name="email"
+                           placeholder="seu@email.com" required autofocus>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="auth-label" for="password">Senha</label>
+                <div class="auth-input-wrapper">
+                    <i class="bi bi-lock icone-esquerda"></i>
+                    <input type="password" class="auth-input" id="password" name="password"
+                           placeholder="••••••••" required>
+                    <button type="button" class="btn-toggle-senha" id="btnToggleSenha">
+                        <i class="bi bi-eye" id="iconeToggleSenha"></i>
+                    </button>
+                </div>
+                <a href="#" class="auth-link-esqueci">Esqueceu sua senha?</a>
+            </div>
+            <button type="submit" class="btn-auth-primario">Entrar</button>
+        </form>
+
+        <div class="auth-divisor-ou"><span>ou</span></div>
+
+        <a href="#" class="btn-auth-secundario">
+            <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill="#4285F4" d="M19.6 10.23c0-.68-.06-1.36-.18-2H10v3.79h5.4a4.6 4.6 0 0 1-2 3.02v2.5h3.23c1.9-1.75 2.97-4.32 2.97-7.31z"/>
+                <path fill="#34A853" d="M10 20c2.7 0 4.96-.89 6.62-2.42l-3.23-2.5c-.9.6-2.05.95-3.39.95-2.6 0-4.8-1.76-5.6-4.12H1.06v2.58A10 10 0 0 0 10 20z"/>
+                <path fill="#FBBC05" d="M4.4 11.9a6 6 0 0 1 0-3.8V5.51H1.06a10 10 0 0 0 0 8.98l3.34-2.6z"/>
+                <path fill="#EA4335" d="M10 3.98c1.47 0 2.79.5 3.83 1.5l2.87-2.87A9.6 9.6 0 0 0 10 0a10 10 0 0 0-8.94 5.51L4.4 8.1C5.2 5.74 7.4 3.98 10 3.98z"/>
+            </svg>
+            Entrar com Google
+        </a>
+
+        <div class="auth-footer">
+            Não tem uma conta? <a th:href="@{/cadastro}">Cadastre-se</a>
+        </div>
+
+    </div>
+</div>
+
+<script th:src="@{/js/login.js}"></script>
+
+</body>
+</html>
