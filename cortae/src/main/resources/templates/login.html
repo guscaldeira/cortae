@@ -20,17 +20,16 @@
         <div class="auth-divisor-topo"></div>
         <div class="auth-titulo">Bem-vindo de volta!</div>
 
-        <div class="auth-erro" th:if="${param.error}">
+        <div class="auth-erro" th:if="${param.error}" role="alert">
             Email ou senha inválidos.
         </div>
-
         <form th:action="@{/login}" method="post">
             <div class="mb-3">
                 <label class="auth-label" for="email">E-mail</label>
                 <div class="auth-input-wrapper">
                     <i class="bi bi-envelope icone-esquerda"></i>
                     <input type="email" class="auth-input" id="email" name="email"
-                           placeholder="seu@email.com" required autofocus>
+                           placeholder="seu@email.com" required autofocus autocomplete="username">
                 </div>
             </div>
 
@@ -38,9 +37,9 @@
                 <label class="auth-label" for="password">Senha</label>
                 <div class="auth-input-wrapper">
                     <i class="bi bi-lock icone-esquerda"></i>
-                    <input type="password" class="auth-input" id="password" name="password"
-                           placeholder="••••••••" required>
-                    <button type="button" class="btn-toggle-senha" id="btnToggleSenha">
+                    <input type="password" class="auth-input auth-input-senha" id="password" name="password"
+                           placeholder="••••••••" required autocomplete="current-password">
+                    <button type="button" class="btn-toggle-senha" id="btnToggleSenha" aria-label="Mostrar senha" aria-pressed="false">
                         <i class="bi bi-eye" id="iconeToggleSenha"></i>
                     </button>
                 </div>

@@ -101,6 +101,9 @@ body {
     color: var(--cor-borda-input);
     pointer-events: none;
 }
+.auth-input-senha {
+    padding-right: 45px;
+}
 
 .auth-input {
     width: 100%;
@@ -125,7 +128,7 @@ body {
 
 .btn-toggle-senha {
     position: absolute;
-    right: 12px;
+    right: 4px;
     top: 50%;
     transform: translateY(-50%);
     background: none;
@@ -133,7 +136,10 @@ body {
     opacity: 0.5;
     color: var(--cor-borda-input);
     cursor: pointer;
-    padding: 0;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center ;
 }
 
 .btn-toggle-senha:hover {
