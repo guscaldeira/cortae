@@ -17,10 +17,10 @@ body {
     background-color: var(--cor-preto);
     background-image: radial-gradient(
         ellipse at top center,
-        rgba(164, 119, 22, 0.25) 0%,
-        rgba(84, 62, 13, 0.15) 25%,
+        rgba(164, 119, 22, 0.25) 5%,
+        rgba(164, 119, 22, 0.15) 25%,
         rgba(4, 4, 3, 0.9) 55%,
-        var(--cor-preto) 75%
+        var(--cor-preto) 70%
     );
     min-height: 100vh;
 }
