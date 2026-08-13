@@ -42,7 +42,6 @@ public class UsuarioService {
         return usuarioRepository.findByEmail(email);
     }
 
-    // --- BUSCAR POR ID ---
     public Optional<Usuario> buscarPorId(Long id) {
         return usuarioRepository.findById(id);
     }
