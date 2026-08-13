@@ -1,0 +1,306 @@
+:root {
+    --cortae-gold: #f4be59;
+    --cortae-gold-text-on-gold: #422d00;
+    --cortae-nav-bg: #17130c;
+    --cortae-nav-border: #1f1b14;
+    --cortae-footer-bg: #120e07;
+    --cortae-footer-border: #2e2922;
+    --cortae-heading-text: #ebe1d5;
+    --cortae-body-text: #d3c4b1;
+}
+
+body.pagina-inicial {
+    background-color: var(--cortae-nav-bg);
+    font-family: "Hanken Grotesk", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.pagina-inicial a {
+    text-decoration: none;
+}
+
+.inicio-navbar {
+    background-color: var(--cortae-nav-bg);
+    border-bottom: 1px solid var(--cortae-nav-border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.inicio-navbar__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 32px;
+    width: 100%;
+}
+.inicio-navbar__logo {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--cortae-gold);
+    margin: 0;
+}
+
+.inicio-navbar__links {
+    display: flex;
+    gap: 24px;
+    flex: 1 0 0;
+    justify-content: center;
+}
+
+.inicio-navbar__link {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--cortae-body-text);
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.inicio-navbar__link:hover, .inicio-navbar__link:focus-visible {
+    background-color: rgba(244, 190, 89, 0.08);
+    color: var(--cortae-gold);
+}
+
+.inicio-navbar__link--ativo {
+    color: var(--cortae-gold);
+}
+
+.inicio-navbar__acoes {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.inicio-navbar__entrar {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    color: var(--cortae-body-text);
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: color 0.15s ease;
+}
+
+.inicio-navbar__entrar:hover, .inicio-navbar__entrar:focus-visible {
+    color: var(--cortae-gold);
+}
+
+.inicio-navbar__cadastro {
+    background-color: var(--cortae-gold);
+    color: var(--cortae-gold-text-on-gold);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.inicio-navbar__cadastro:hover, .inicio-navbar__cadastro:focus-visible {
+    filter: brightness(1.08);
+}
+
+.inicio-hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 910px;
+    overflow: clip;
+    padding: 160px 32px;
+    background-color: var(--cortae-nav-bg);
+}
+
+.inicio-hero__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    border-radius: 9999px;
+    background-color: var(--cortae-gold);
+    opacity: 0.05;
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.inicio-hero__conteudo {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 896px;
+    width: 100%;
+    text-align: center;
+}
+
+.inicio-hero__titulo {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: var(--cortae-heading-text);
+    letter-spacing: -0.96px;
+    max-width: 720px;
+    margin: 0 0 24px 0;
+}
+
+.inicio-hero__subtitulo {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+    color: var(--cortae-body-text);
+    max-width: 672px;
+    margin: 0 0 48px 0;
+}
+
+.inicio-hero__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.inicio-hero__botao-primario {
+    background-color: var(--cortae-gold);
+    color: var(--cortae-gold-text-on-gold);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.7px;
+    padding: 16px 32px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.inicio-hero__botao-primario:hover, .inicio-hero__botao-primario:focus-visible {
+    filter: brightness(1.08);
+}
+
+.inicio-hero__botao-secundario {
+    border: 1px solid var(--cortae-gold);
+    color: var(--cortae-gold);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    padding: 16px 32px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.inicio-hero__botao-secundario:hover, .inicio-hero__botao-secundario:focus-visible {
+    background-color: rgba(244, 190, 89, 0.08);
+}
+
+.inicio-badges {
+    width: 100%;
+    border-top: 1px solid var(--cortae-nav-border);
+    margin-top: 80px;
+    padding-top: 33px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    flex-wrap: wrap;
+}
+
+.inicio-badges__item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.inicio-badges__icone {
+    width: 17px;
+    height: 17px;
+    color: var(--cortae-gold);
+    flex-shrink: 0;
+}
+
+.inicio-badges__texto {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: var(--cortae-body-text);
+    white-space: nowrap;
+}
+
+.inicio-footer {
+    background-color: var(--cortae-footer-bg);
+    border-top: 1px solid var(--cortae-footer-border);
+    padding: 49px 32px 48px 32px;
+}
+
+.inicio-footer__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.inicio-footer__marca {
+    font-family: "Libre Caslon Text", serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--cortae-gold);
+    margin: 0;
+}
+
+.inicio-footer__links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.inicio-footer__link {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 500;
+    color: var(--cortae-body-text);
+    opacity: 0.9;
+}
+
+.inicio-footer__link:hover, .inicio-footer__link:focus-visible {
+    opacity: 1;
+    color: var(--cortae-gold);
+}
+
+.inicio-footer__copyright {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: var(--cortae-body-text);
+    text-align: right;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .inicio-navbar__links {
+        display: none;
+    }
+
+    .inicio-hero__titulo {
+        font-size: 34px;
+        line-height: 40px;
+    }
+
+    .inicio-footer__container {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .inicio-footer__copyright {
+        text-align: center;
+        width: 100%;
+    }
+}

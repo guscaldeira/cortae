@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cortaê - Gestão de Excelência para sua Barbearia</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="@{/css/inicio.css}">
+</head>
+<body class="pagina-inicial">
+
+    <header class="inicio-navbar">
+        
+        <div class="inicio-navbar__container">
+            <p class="inicio-navbar__logo">Cortaê</p>
+
+            <nav class="inicio-navbar__links">
+                <a th:href="@{/}" class="inicio-navbar__link inicio-navbar__link--ativo">Início</a>
+                <a th:href="@{/saiba-mais}" class="inicio-navbar__link">Saiba Mais</a>
+                <a th:href="@{/suporte}" class="inicio-navbar__link">Suporte</a>
+            </nav>
+
+            <div class="inicio-navbar__acoes">
+                <a th:href="@{/login}" class="inicio-navbar__entrar">Entrar</a>
+                <a th:href="@{/cadastro}" class="inicio-navbar__cadastro">Cadastre-se</a>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <section class="inicio-hero">
+            <div class="inicio-hero__glow" aria-hidden="true"></div>
+            
+            <div class="inicio-hero__conteudo">
+                <h1 class="inicio-hero__titulo">Gestão de Excelência para sua Barbearia</h1>
+
+                <p class="inicio-hero__subtitulo">Um sistema digital simples, rápido e sofisticado para o barbeiro moderno.</p>
+
+                <div class="inicio-hero__cta">
+                    <a th:href="@{/cadastro}" class="inicio-hero__botao-primario">Começar Agora</a>
+                    <a th:href="@{/saiba-mais}" class="inicio-hero__botao-secundario">Saiba Mais</a>
+                </div>
+
+                <div class="inicio-badges">
+                    <div class="inicio-badges__item">
+                        <i class="bi bi-credit-card-2-front inicio-badges__icone" aria-hidden="true"></i>
+                        <span class="inicio-badges__texto">Sem cartão de crédito</span>
+                    </div>
+                    <div class="inicio-badges__item">
+                        <i class="bi bi-lightning-charge-fill inicio-badges__icone" aria-hidden="true"></i>
+                        <span class="inicio-badges__texto">Acesso imediato</span>
+                    </div>
+                    <div class="inicio-badges__item">
+                        <i class="bi bi-headset inicio-badges__icone" aria-hidden="true"></i>
+                        <span class="inicio-badges__texto">Suporte 24h</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="inicio-footer">
+        <div class="inicio-footer__container">
+            <p class="inicio-footer__marca">Cortaê</p>
+
+            <nav class="inicio-footer__links">
+                <a th:href="@{/politica-de-privacidade}" class="inicio-footer__link">Política de Privacidade</a>
+                <a th:href="@{/termos-de-uso}" class="inicio-footer__link">Termos de uso</a>
+                <a th:href="@{/suporte}" class="inicio-footer__link">Suporte</a>
+                <a th:href="@{/#contato}" class="inicio-footer__link">Contato</a>
+            </nav>
+
+            <p class="inicio-footer__copyright">&copy; 2026 Caldeira Management. Craftsmanship in every pixel.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
