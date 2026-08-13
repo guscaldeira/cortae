@@ -1,6 +1,7 @@
 :root {
-    --cortae-gold: #f4be59;
-    --cortae-gold-text-on-gold: #422d00;
+    --cor-dourado: #f4be59;
+    --cortae-gold: #a47716;
+    --cortae-gold-text-on-gold: #040403;
     --cortae-nav-bg: #17130c;
     --cortae-nav-border: #1f1b14;
     --cortae-footer-bg: #120e07;
@@ -40,7 +41,7 @@ body.pagina-inicial {
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
-    color: var(--cortae-gold);
+    color: var(--cor-dourado);
     margin: 0;
 }
 
@@ -62,7 +63,7 @@ body.pagina-inicial {
 }
 
 .inicio-navbar__link:hover, .inicio-navbar__link:focus-visible {
-    background-color: rgba(244, 190, 89, 0.08);
+    background-color: rgba(244, 190, 89, 0);
     color: var(--cortae-gold);
 }
 
@@ -226,7 +227,7 @@ body.pagina-inicial {
 }
 
 .inicio-badges__texto {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 16px;
     font-weight: 500;
     color: var(--cortae-body-text);
@@ -252,7 +253,7 @@ body.pagina-inicial {
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
-    color: var(--cortae-gold);
+    color: var(--cor-dourado);
     margin: 0;
 }
 
@@ -263,8 +264,8 @@ body.pagina-inicial {
 }
 
 .inicio-footer__link {
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 14px;
+    line-height: 20px;
     font-weight: 500;
     color: var(--cortae-body-text);
     opacity: 0.9;
