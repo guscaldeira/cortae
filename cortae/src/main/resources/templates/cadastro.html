@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cortaê - Criar Conta</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/cadastro.css}">
+</head>
+<body class="pagina-cadastro">
+    
+    <div class="cadastro-card">
+        <div class="cadastro-header">
+            <p class="cadastro-header__logo">Cortaê</p>
+            <p class="cadastro-header__tagline">Gestão de excelência para sua barbearia</p>
+            <hr class="cadastro-header__divisor">
+        </div>
+
+        <h1 class="cadastro-titulo">Crie sua conta</h1>
+
+        <p th:if="${erro}" th:text="${erro}" class="cadastro-erro-geral" role="alert"></p>
+
+        <form th:action="@{/cadastro}" th:object="${usuario}" method="post" class="cadastro-form" novalidate>
+
+            <div class="cadastro-campo">
+                <label for="nomeCompleto" class="cadastro-campo__label">Nome completo</label>
+                <div class="cadastro-campo__wrapper">
+                    <input type="text" id="nomeCompleto" th:field="*{nomeCompleto}" class="cadastro-campo__input" placeholder="Ex: João Silva" autocomplete="name" required>
+                </div>
+            </div>
+
+            <div class="cadastro-campo">
+                <label for="email" class="cadastro-campo__label">E-mail</label>
+                <div class="cadastro-campo__wrapper">
+                    <span class="cadastro-campo__icone" aria-hidden="true"><i class="bi bi-envelope"></i></span>
+                    <input type="email" id="email" th:field="*{email}" class="cadastro-campo__input cadastro-campo__input--com-icone" placeholder="seu@email.com" autocomplete="email" required>
+                </div>
+            </div>
+
+            <div class="cadastro-campo">
+                <label for="senha" class="cadastro-campo__label">Senha</label>
+                <div class="cadastro-campo__wrapper">
+                    <span class="cadastro-campo__icone" aria-hidden="true"><i class="bi bi-lock"></i></span>
+                    <input type="password" id="senha" th:field="*{senha}" class="cadastro-campo__input cadastro-campo__input--com-icone" placeholder="••••••••" autocomplete="new-password" minlength="8" required>
+                    <button type="button" class="cadastro-campo__toggle-senha" data-alvo="senha" aria-pressed="false" aria-label="Mostrar Senha"><i class="bi bi-eye" aria-hidden="true"></i></button>
+                </div>
+            </div>
+
+            <div class="cadastro-campo">
+                <label for="confirmarSenha" class="cadastro-campo__label">Confirmar Senha</label>
+                <div class="cadastro-campo__wrapper">
+                    <span class="cadastro-campo__icone" aria-hidden="true"><i class="bi bi-lock"></i></span>
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" class="cadastro-campo__input cadastro-campo__input--com-icone" placeholder="••••••••" autocomplete="new-password" minlength="8" required>
+                    <button type="button" class="cadastro-campo__toggle-senha" data-alvo="confirmarSenha" aria-pressed="false" aria-label="Mostrar Senha"><i class="bi bi-eye" aria-hidden="true"></i></button>
+                </div>
+                <p id="erro-confirmar-senha" class="cadastro-campo__erro" role="alert" hidden>As senhas não coincidem.</p>
+            </div>
+
+            <p class="cadastro-legal">Ao continuar, você concorda com os <a th:href="@{/termos-de-uso}">Termos de Uso</a> e a <a th:href="@{/politica-de-privacidade}">Política de Privacidade</a></p>
+
+            <button type="submit" class="cadastro-botao-primario">Criar Conta</button>
+        </form>
+
+        <div class="cadastro-divisor">
+            <hr class="cadastro-divisor__linha">
+            <span class="cadastro-divisor__texto">ou</span>
+            <hr class="cadastro-divisor__linha">
+        </div>
+
+        <button type="button" class="cadastro-botao-google" title="Em breve" aria-disabled="true" onclick="return false"><i class="bi bi-google" aria-hidden="true"></i><span class="cadastro-botao-google__texto">Cadastrar com Google</span></button>
+
+        <div class="cadastro-footer">
+            <p class="cadastro-footer__texto">Já tem uma conta? <a th:href="@{/login}" class="cadastro-footer__link">Entrar</a></p>
+        </div>
+
+    </div>
+
+    <script th:src="@{/js/cadastro.js}"></script>
+</body>
+</html>
