@@ -25,8 +25,7 @@
 
         <p th:if="${erro}" th:text="${erro}" class="cadastro-erro-geral" role="alert"></p>
 
-        <form th:action="@{/cadastro}" th:object="${usuario}" method="post" class="cadastro-form" novalidate>
-
+        <form th:action="@{/cadastro}" th:object="${usuario}" method="post" class="cadastro-form">
             <div class="cadastro-campo">
                 <label for="nomeCompleto" class="cadastro-campo__label">Nome completo</label>
                 <div class="cadastro-campo__wrapper">
