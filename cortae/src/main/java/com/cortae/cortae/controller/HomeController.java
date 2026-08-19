@@ -10,4 +10,9 @@ public class HomeController {
     public String mostrarInicio() {
         return "inicio";
     }
+
+    @GetMapping("/saiba-mais")
+    public String mostrarSaibamais() {
+        return "sainamais";
+    }
 }
