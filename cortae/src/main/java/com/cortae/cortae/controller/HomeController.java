@@ -13,6 +13,6 @@ public class HomeController {
 
     @GetMapping("/saiba-mais")
     public String mostrarSaibamais() {
-        return "sainamais";
+        return "saibamais";
     }
 }
