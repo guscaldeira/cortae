@@ -19,11 +19,13 @@ body.pagina-saibamais {
   padding: 0;
   font-family: "Hanken Grotesk", sans-serif;
   background-color: var(--cortae-page-bg);
-  background-image: radial-gradient(
-    ellipse 1200px 700px at top center,
-    rgba(164, 119, 22, 0.1),
-    rgba(164, 119, 22, 0) 70%
-  );
+    background-image: radial-gradient(
+        ellipse at top center,
+        rgba(164, 119, 22, 0.25) 5%,
+        rgba(164, 119, 22, 0.15) 25%,
+        rgba(4, 4, 3, 0.9) 55%,
+        #040403 70%
+    );
 }
  
 .pagina-saibamais a {
@@ -83,12 +85,11 @@ body.pagina-saibamais {
  
 .saibamais-navbar__link:hover,
 .saibamais-navbar__link:focus-visible {
-  background-color: rgba(244, 190, 89, 0.08);
-  color: var(--cortae-gold);
+  color: var(--cortae-gold-escuro);
 }
  
 .saibamais-navbar__link--ativo {
-  color: var(--cortae-gold);
+  color: var(--cortae-gold-escuro);
 }
  
 .saibamais-navbar__acoes {
@@ -109,11 +110,11 @@ body.pagina-saibamais {
  
 .saibamais-navbar__entrar:hover,
 .saibamais-navbar__entrar:focus-visible {
-  color: var(--cortae-gold);
+  color: var(--cortae-gold-escuro);
 }
  
 .saibamais-navbar__cadastro {
-  background-color: var(--cortae-gold);
+  background-color: var(--cortae-gold-escuro);
   color: var(--cortae-gold-text-on-gold);
   font-size: 14px;
   font-weight: 700;
@@ -655,6 +656,7 @@ body.pagina-saibamais {
 .saibamais-footer__copyright {
   font-size: 16px;
   line-height: 24px;
+  font-weight: 400;
   color: var(--cortae-body-text);
   margin: 0;
 }
@@ -665,7 +667,7 @@ body.pagina-saibamais {
 }
  
 .saibamais-footer__link {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--cortae-body-text);
   opacity: 0.9;
@@ -674,7 +676,7 @@ body.pagina-saibamais {
 .saibamais-footer__link:hover,
 .saibamais-footer__link:focus-visible {
   opacity: 1;
-  color: var(--cortae-gold);
+  color: var(--cortae-gold-escuro);
 }
 
 @media (max-width: 1024px) {
