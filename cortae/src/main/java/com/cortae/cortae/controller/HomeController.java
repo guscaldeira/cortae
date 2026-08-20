@@ -15,4 +15,9 @@ public class HomeController {
     public String mostrarSaibamais() {
         return "saibamais";
     }
+
+    @GetMapping("/politica-de-privacidade")
+    public String mostrarPoliticaPrivacidade() {
+        return "politicaprivacidade";
+    }
 }
