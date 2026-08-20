@@ -1,4 +1,3 @@
-
 :root {
   --cortae-gold: #f4be59;
   --cortae-gold-escuro: #a47716;
@@ -694,37 +693,45 @@ body.pagina-saibamais {
 }
  
 @media (max-width: 768px) {
-  .saibamais-navbar__links {
-    display: none;
+  .saibamais-navbar__container {
+    flex-wrap: wrap;
+    row-gap: 8px;
+    padding: 8px 20px;
   }
- 
+
+  .saibamais-navbar__links {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
   .pagina-saibamais section {
     padding: 64px 20px;
   }
- 
+
   .saibamais-hero__titulo {
     font-size: 34px;
     line-height: 40px;
   }
- 
+
   .saibamais-passos {
     grid-template-columns: 1fr;
   }
- 
+
   .saibamais-feature,
   .saibamais-feature--invertida {
     flex-direction: column;
   }
- 
+
   .saibamais-planos {
     grid-template-columns: 1fr;
   }
- 
+
   .saibamais-cta__titulo {
     font-size: 32px;
     line-height: 40px;
   }
- 
+
   .saibamais-footer__container {
     flex-direction: column;
     text-align: center;
