@@ -286,8 +286,16 @@ body.pagina-inicial {
 }
 
 @media (max-width: 768px) {
+    .inicio-navbar__container {
+        flex-wrap: wrap;
+        row-gap: 8px;
+        padding: 8px 20px;
+    }
+
     .inicio-navbar__links {
-        display: none;
+        order: 3;
+        width: 100%;
+        justify-content: center;
     }
 
     .inicio-hero__titulo {
