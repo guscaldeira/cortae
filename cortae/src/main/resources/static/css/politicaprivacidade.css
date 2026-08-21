@@ -217,7 +217,7 @@ body.pagina-politica {
 }
 
 .politica-footer__link {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--cortae-body-text);
   opacity: 0.9;
@@ -260,9 +260,18 @@ body.pagina-politica {
     line-height: 40px;
   }
 
+  .politica-footer {
+    padding: 24px 20px;
+  }
+
   .politica-footer__container {
     flex-direction: column;
     text-align: center;
+  }
+
+  .politica-footer__links {
+    justify-content: center;
+    width: 100%;
   }
 
   .politica-footer__copyright {
