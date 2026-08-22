@@ -15,6 +15,13 @@ body.pagina-termos {
   padding: 0;
   font-family: "Hanken Grotesk", sans-serif;
   background-color: var(--cortae-page-bg);
+  background-image: radial-gradient(
+        ellipse at top center,
+        rgba(164, 119, 22, 0.25) 5%,
+        rgba(164, 119, 22, 0.15) 25%,
+        rgba(4, 4, 3, 0.9) 55%,
+        #040403 70%
+    );
 }
 
 .pagina-termos a {
@@ -52,7 +59,7 @@ body.pagina-termos {
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.7px;
-  color: #e2e2e2;
+  color: var(--cortae-gold);
 }
 
 .termos-header__voltar i {
@@ -61,7 +68,7 @@ body.pagina-termos {
 
 .termos-header__voltar:hover,
 .termos-header__voltar:focus-visible {
-  color: var(--cortae-gold);
+  color: var(--cortae-gold-escuro);
 }
 
 .termos-main {
@@ -150,17 +157,15 @@ body.pagina-termos {
 .termos-footer {
   background-color: var(--cortae-footer-bg);
   border-top: 1px solid var(--cortae-footer-border);
-  padding: 24px 32px;
+  padding: 49px 32px 48px 32px;
 }
 
 .termos-footer__container {
-  max-width: 1280px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 24px;
 }
 
 .termos-footer__marca {
@@ -179,7 +184,7 @@ body.pagina-termos {
 }
 
 .termos-footer__link {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--cortae-body-text);
   opacity: 0.9;
@@ -188,11 +193,11 @@ body.pagina-termos {
 .termos-footer__link:hover,
 .termos-footer__link:focus-visible {
   opacity: 1;
-  color: var(--cortae-gold);
+  color: var(--cortae-gold-escuro);
 }
 
 .termos-footer__link--ativo {
-  color: var(--cortae-gold);
+  color: var(--cortae-gold-escuro);
   opacity: 1;
 }
 
