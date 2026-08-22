@@ -25,4 +25,9 @@ public class HomeController {
     public String mostrarTermosuso() {
         return "termosuso";
     }
+
+    @GetMapping("/suporte")
+    public String mostrarSuporte() {
+        return "suporte";
+    }
 }

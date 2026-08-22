@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cortaê — Suporte</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/suporte.css}">
+</head>
+<body class="pagina-suporte">
+
+    <header class="suporte-navbar">
+        <div class="suporte-navbar__container">
+            <p class="suporte-navbar__logo">Cortaê</p>
+            <nav class="suporte-navbar__links">
+                <a th:href="@{/}" class="suporte-navbar__link">Início</a>
+                <a th:href="@{/saiba-mais}" class="suporte-navbar__link">Saiba Mais</a>
+                <a th:href="@{/suporte}" class="suporte-navbar__link suporte-navbar__link--ativo">Suporte</a>
+            </nav>
+            
+            <div class="suporte-navbar__acoes">
+                <a th:href="@{/login}" class="suporte-navbar__entrar">Entrar</a>
+                <a th:href="@{/cadastro}" class="suporte-navbar__cadastro">Cadastre-se</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="suporte-hero">
+            <div class="suporte-hero__glow" aria-hidden="true"></div>
+            <div class="suporte-hero__conteudo">
+                <h1 class="suporte-hero__titulo">Como podemos ajudar?</h1>
+                <p class="suporte-hero__subtitulo">Encontre respostas rápidas para as dúvidas mais comuns ou entre em contato com nossa equipe especializada.</p>
+                <form class="suporte-busca" role="search" onsubmit="return false;">
+                    <i class="bi bi-search suporte-busca__icone" aria-hidden="true"></i>
+                    <label for="busca-suporte" class="visually-hidden">Buscar na central de ajuda</label>
+                    <input type="search"
+                        id="busca-suporte"
+                        class="suporte-busca__input"
+                        placeholder="Busque por 'pagamentos', 'agendamento'..."
+                        title="Busca em breve"
+                        disabled>
+                </form>
+            </div>
+        </section>
+
+        <section>
+            <div class="suporte-container">
+                <h2 class="suporte-titulo-secao">Tópicos Frequentes</h2>
+                <div class="suporte-topicos">
+                    <div class="suporte-topico">
+                        <div class="suporte-topico__icone-wrapper">
+                            <i class="bi bi-rocket-takeoff" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="suporte-topico__titulo">Primeiros Passos</h3>
+                        <p class="suporte-topico__texto">Configuração inicial, cadastro de barbeiros e serviços.</p>
+                    </div>
+                    <div class="suporte-topico">
+                        <div class="suporte-topico__icone-wrapper">
+                            <i class="bi bi-calendar-check" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="suporte-topico__titulo">Agendamentos</h3>
+                        <p class="suporte-topico__texto">Gerenciamento de agenda, bloqueios e notificações.</p>
+                    </div>
+                    <div class="suporte-topico">
+                        <div class="suporte-topico__icone-wrapper">
+                            <i class="bi bi-credit-card" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="suporte-topico__titulo">Pagamentos</h3>
+                        <p class="suporte-topico__texto">Faturamento, relatórios, planos e comissões.</p>
+                    </div>
+                    <div class="suporte-topico">
+                        <div class="suporte-topico__icone-wrapper">
+                            <i class="bi bi-person-gear" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="suporte-topico__titulo">Conta e Cadastro</h3>
+                        <p class="suporte-topico__texto">Senhas, dados da barbearia e permissões.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="suporte-faq">
+                <h2 class="suporte-titulo-secao">Perguntas Frequentes</h2>
+                <div class="suporte-faq-lista">
+                    <details class="suporte-faq-item">
+                        <summary>Como funciona o período de teste?</summary>
+                        <p class="suporte-faq-item__resposta">Você pode criar sua conta e explorar as funcionalidades da plataforma antes de decidir por um plano pago. Não há compromisso durante essa fase inicial.</p>
+                    </details>
+                    <details class="suporte-faq-item">
+                        <summary>Preciso de cartão de crédito para começar?</summary>
+                        <p class="suporte-faq-item__resposta">Não. Você pode se cadastrar e conhecer a plataforma sem informar dados de pagamento.</p>
+                    </details>
+                    <details class="suporte-faq-item">
+                        <summary>Posso cancelar quando quiser?</summary>
+                        <p class="suporte-faq-item__resposta">Sim, o cancelamento pode ser feito a qualquer momento diretamente nas configurações da sua conta, sem burocracia.</p>
+                    </details>
+                    <details class="suporte-faq-item">
+                        <summary>A plataforma funciona para barbearias com mais de um profissional?</summary>
+                        <p class="suporte-faq-item__resposta">Sim, o Cortaê foi projetado tanto para barbeiros autônomos quanto para barbearias com equipes de qualquer tamanho.</p>
+                    </details>
+                    <details class="suporte-faq-item">
+                        <summary>Meus dados e os dos meus clientes ficam seguros?</summary>
+                        <p class="suporte-faq-item__resposta">Sim. Utilizamos criptografia e boas práticas de segurança para proteger as informações da sua barbearia e dos seus clientes.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="suporte-container">
+                <h2 class="suporte-titulo-secao">Fale diretamente com a gente</h2>
+                <div class="suporte-contato">
+                    <div class="suporte-contato-card">
+                        <div class="suporte-contato-card__icone-wrapper">
+                            <i class="bi bi-envelope" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="suporte-contato-card__titulo">E-mail</h3>
+                        <p class="suporte-contato-card__texto">Respondemos em até 1 dia útil.</p>
+                        <a href="mailto:suporte@cortae.com.br" class="suporte-contato-card__link">suporte@cortae.com.br</a>
+                    </div>
+                    <div class="suporte-contato-card">
+                        <div class="suporte-contato-card__icone-wrapper">
+                            <i class="bi bi-whatsapp" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="suporte-contato-card__titulo">WhatsApp</h3>
+                        <p class="suporte-contato-card__texto">Atendimento comercial em horário útil.</p>
+                        <a href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer" class="suporte-contato-card__link">Iniciar conversa</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="suporte-cta">
+            <div class="suporte-cta__card">
+                <h2 class="suporte-cta__titulo">Ainda com dúvidas?</h2>
+                <p class="suporte-cta__texto">Fale com a gente ou comece agora mesmo, sem compromisso.</p>
+                <div class="suporte-cta__acoes">
+                    <a href="mailto:suporte@cortae.com.br" class="suporte-cta__botao-secundario">Fale com a gente</a>
+                    <a th:href="@{/cadastro}" class="suporte-cta__botao-primario">Comece Agora</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="suporte-footer">
+        <div class="suporte-footer__container">
+            <p class="suporte-footer__marca">Cortaê</p>
+            <nav class="suporte-footer__links">
+                <a th:href="@{/politica-de-privacidade}" class="suporte-footer__link">Política de Privacidade</a>
+                <a th:href="@{/termos-de-uso}" class="suporte-footer__link">Termos de Uso</a>
+                <a th:href="@{/suporte}" class="suporte-footer__link suporte-footer__link--ativo">Suporte</a>
+                <a th:href="@{/suporte}" class="suporte-footer__link">Contatos</a>
+            </nav>
+            <p class="suporte-footer__copyright">&copy; 2026 Caldeira Management. Craftsmanship in every pixel.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>
