@@ -20,4 +20,9 @@ public class HomeController {
     public String mostrarPoliticaPrivacidade() {
         return "politicaprivacidade";
     }
+
+    @GetMapping("/termos-de-uso")
+    public String mostrarTermosuso() {
+        return "termosuso";
+    }
 }
