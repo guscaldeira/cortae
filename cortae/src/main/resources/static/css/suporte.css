@@ -572,5 +572,6 @@ body.pagina-suporte {
   .suporte-footer__links {
     justify-content: center;
     width: 100%;
+    flex-wrap: wrap;
   }
 }
