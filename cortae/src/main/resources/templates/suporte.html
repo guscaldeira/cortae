@@ -39,12 +39,7 @@
                 <form class="suporte-busca" role="search" onsubmit="return false;">
                     <i class="bi bi-search suporte-busca__icone" aria-hidden="true"></i>
                     <label for="busca-suporte" class="visually-hidden">Buscar na central de ajuda</label>
-                    <input type="search"
-                        id="busca-suporte"
-                        class="suporte-busca__input"
-                        placeholder="Busque por 'pagamentos', 'agendamento'..."
-                        title="Busca em breve"
-                        disabled>
+                    <input type="search" id="busca-suporte" class="suporte-busca__input" placeholder="Busque por 'pagamentos', 'agendamento'...">
                 </form>
             </div>
         </section>
@@ -53,28 +48,28 @@
             <div class="suporte-container">
                 <h2 class="suporte-titulo-secao">Tópicos Frequentes</h2>
                 <div class="suporte-topicos">
-                    <div class="suporte-topico">
+                    <div class="suporte-topico suporte-reveal">
                         <div class="suporte-topico__icone-wrapper">
                             <i class="bi bi-rocket-takeoff" aria-hidden="true"></i>
                         </div>
                         <h3 class="suporte-topico__titulo">Primeiros Passos</h3>
                         <p class="suporte-topico__texto">Configuração inicial, cadastro de barbeiros e serviços.</p>
                     </div>
-                    <div class="suporte-topico">
+                    <div class="suporte-topico suporte-reveal">
                         <div class="suporte-topico__icone-wrapper">
                             <i class="bi bi-calendar-check" aria-hidden="true"></i>
                         </div>
                         <h3 class="suporte-topico__titulo">Agendamentos</h3>
                         <p class="suporte-topico__texto">Gerenciamento de agenda, bloqueios e notificações.</p>
                     </div>
-                    <div class="suporte-topico">
+                    <div class="suporte-topico suporte-reveal">
                         <div class="suporte-topico__icone-wrapper">
                             <i class="bi bi-credit-card" aria-hidden="true"></i>
                         </div>
                         <h3 class="suporte-topico__titulo">Pagamentos</h3>
                         <p class="suporte-topico__texto">Faturamento, relatórios, planos e comissões.</p>
                     </div>
-                    <div class="suporte-topico">
+                    <div class="suporte-topico suporte-reveal">
                         <div class="suporte-topico__icone-wrapper">
                             <i class="bi bi-person-gear" aria-hidden="true"></i>
                         </div>
@@ -82,6 +77,7 @@
                         <p class="suporte-topico__texto">Senhas, dados da barbearia e permissões.</p>
                     </div>
                 </div>
+                <p id="suporte-sem-resultados-topicos" class="suporte-sem-resultados" hidden>Nenhum tópico encontrado para essa busca.</p>
             </div>
         </section>
 
@@ -89,27 +85,28 @@
             <div class="suporte-faq">
                 <h2 class="suporte-titulo-secao">Perguntas Frequentes</h2>
                 <div class="suporte-faq-lista">
-                    <details class="suporte-faq-item">
+                    <details class="suporte-faq-item suporte-reveal">
                         <summary>Como funciona o período de teste?</summary>
                         <p class="suporte-faq-item__resposta">Você pode criar sua conta e explorar as funcionalidades da plataforma antes de decidir por um plano pago. Não há compromisso durante essa fase inicial.</p>
                     </details>
-                    <details class="suporte-faq-item">
+                    <details class="suporte-faq-item suporte-reveal">
                         <summary>Preciso de cartão de crédito para começar?</summary>
                         <p class="suporte-faq-item__resposta">Não. Você pode se cadastrar e conhecer a plataforma sem informar dados de pagamento.</p>
                     </details>
-                    <details class="suporte-faq-item">
+                    <details class="suporte-faq-item suporte-reveal">
                         <summary>Posso cancelar quando quiser?</summary>
                         <p class="suporte-faq-item__resposta">Sim, o cancelamento pode ser feito a qualquer momento diretamente nas configurações da sua conta, sem burocracia.</p>
                     </details>
-                    <details class="suporte-faq-item">
+                    <details class="suporte-faq-item suporte-reveal">
                         <summary>A plataforma funciona para barbearias com mais de um profissional?</summary>
                         <p class="suporte-faq-item__resposta">Sim, o Cortaê foi projetado tanto para barbeiros autônomos quanto para barbearias com equipes de qualquer tamanho.</p>
                     </details>
-                    <details class="suporte-faq-item">
+                    <details class="suporte-faq-item suporte-reveal">
                         <summary>Meus dados e os dos meus clientes ficam seguros?</summary>
                         <p class="suporte-faq-item__resposta">Sim. Utilizamos criptografia e boas práticas de segurança para proteger as informações da sua barbearia e dos seus clientes.</p>
                     </details>
                 </div>
+                <p id="suporte-sem-resultados-faq" class="suporte-sem-resultados" hidden>Nenhuma pergunta encontrada para essa busca.</p>
             </div>
         </section>
 
@@ -117,7 +114,7 @@
             <div class="suporte-container">
                 <h2 class="suporte-titulo-secao">Fale diretamente com a gente</h2>
                 <div class="suporte-contato">
-                    <div class="suporte-contato-card">
+                    <div class="suporte-contato-card suporte-reveal">
                         <div class="suporte-contato-card__icone-wrapper">
                             <i class="bi bi-envelope" aria-hidden="true"></i>
                         </div>
@@ -125,7 +122,7 @@
                         <p class="suporte-contato-card__texto">Respondemos em até 1 dia útil.</p>
                         <a href="mailto:suporte@cortae.com.br" class="suporte-contato-card__link">suporte@cortae.com.br</a>
                     </div>
-                    <div class="suporte-contato-card">
+                    <div class="suporte-contato-card suporte-reveal">
                         <div class="suporte-contato-card__icone-wrapper">
                             <i class="bi bi-whatsapp" aria-hidden="true"></i>
                         </div>
@@ -138,7 +135,7 @@
         </section>
 
         <section class="suporte-cta">
-            <div class="suporte-cta__card">
+            <div class="suporte-cta__card suporte-reveal">
                 <h2 class="suporte-cta__titulo">Ainda com dúvidas?</h2>
                 <p class="suporte-cta__texto">Fale com a gente ou comece agora mesmo, sem compromisso.</p>
                 <div class="suporte-cta__acoes">
@@ -161,6 +158,8 @@
             <p class="suporte-footer__copyright">&copy; 2026 Caldeira Management. Craftsmanship in every pixel.</p>
         </div>
     </footer>
+
+    <script th:src="@{/js/suporte.js}"></script>
     
 </body>
 </html>

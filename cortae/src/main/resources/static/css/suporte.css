@@ -469,7 +469,7 @@ body.pagina-suporte {
 .suporte-footer {
   background-color: var(--cortae-footer-bg);
   border-top: 1px solid #4f4536;
-  padding:  49px 32px 48px 32px;;
+  padding:  49px 32px 48px 32px;
 }
 
 .suporte-footer__container {
@@ -517,6 +517,34 @@ body.pagina-suporte {
 .suporte-footer__link--ativo {
   color: var(--cortae-gold-escuro);
   opacity: 1;
+}
+
+.suporte-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.suporte-reveal--visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .suporte-reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.suporte-sem-resultados {
+  text-align: center;
+  color: var(--cortae-body-text);
+  font-size: 16px;
+  line-height: 24px;
+  padding: 24px;
+  margin: 0;
 }
 
 @media (max-width: 1024px) {
