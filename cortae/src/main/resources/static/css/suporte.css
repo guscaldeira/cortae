@@ -328,6 +328,18 @@ body.pagina-suporte {
   margin: 0;
 }
 
+.suporte-faq-item__corpo {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .suporte-faq-item__corpo {
+    transition: none;
+  }
+}
+
 .suporte-contato {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
