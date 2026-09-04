@@ -678,6 +678,37 @@ body.pagina-saibamais {
   color: var(--cortae-gold-escuro);
 }
 
+.saibamais-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.saibamais-reveal--visivel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .saibamais-reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.saibamais-faq-item__corpo {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .saibamais-faq-item__corpo {
+    transition: none;
+  }
+}
+
 @media (max-width: 1024px) {
   .saibamais-passos {
     grid-template-columns: repeat(2, 1fr);
