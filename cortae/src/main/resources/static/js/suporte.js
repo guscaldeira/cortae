@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const elementosReveal = document.querySelectorAll(".suporte-reveal");
 
     if (prefereMovimentoReduzido || !("IntersectionObserver" in window)) {
-        // Sem suporte ou usuário pediu menos animação: mostra tudo de uma vez
         elementosReveal.forEach(function (elemento) {
             elemento.classList.add("suporte-reveal--visivel");
         });
@@ -92,12 +91,17 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".suporte-faq-item summary").forEach(function (resumo) {
     resumo.addEventListener("click", function (evento) {
         evento.preventDefault();
-
         const item = resumo.parentElement;
         const corpo = item.querySelector(".suporte-faq-item__corpo");
         const estaAberto = item.hasAttribute("open");
+        const prefereMovimentoReduzido = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
         if (estaAberto) {
+            if (prefereMovimentoReduzido) {
+                item.removeAttribute("open");
+                corpo.style.height = "";
+                return;
+            }
             corpo.style.height = corpo.scrollHeight + "px";
             requestAnimationFrame(function () {
                 corpo.style.height = "0px";
@@ -109,16 +113,22 @@ document.addEventListener("DOMContentLoaded", function () {
             }, { once: true });
         } else {
             item.setAttribute("open", "");
-            corpo.style.height = "0px";
-            requestAnimationFrame(function () {
-                corpo.style.height = corpo.scrollHeight + "px";
-            });
-            corpo.addEventListener("transitionend", function aoTerminar() {
-                corpo.style.height = "auto";
-                corpo.removeEventListener("transitionend", aoTerminar);
-            }, { once: true });
+
+            if (prefereMovimentoReduzido) {
+            corpo.style.height = "auto";
+            return;
         }
-    });
+
+        corpo.style.height = "0px";
+        requestAnimationFrame(function () {
+            corpo.style.height = corpo.scrollHeight + "px";
+        });
+        corpo.addEventListener("transitionend", function aoTerminar() {
+            corpo.style.height = "auto";
+            corpo.removeEventListener("transitionend", aoTerminar);
+        }, { once: true });
+    }
+});
 });
 
 });
