@@ -26,6 +26,10 @@ body.pagina-politica {
     );
 }
 
+.pagina-politica a {
+  text-decoration: none;
+}
+
 .politica-header {
   background-color: var(--cortae-header-bg);
   border-bottom: 1px solid var(--cortae-header-border);
@@ -188,17 +192,15 @@ body.pagina-politica {
 .politica-footer {
   background-color: var(--cortae-footer-bg);
   border-top: 1px solid var(--cortae-footer-border);
-  padding: 24px 32px;
+  padding: 49px 32px 48px 32px;
 }
 
 .politica-footer__container {
-  max-width: 1280px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 24px;
 }
 
 .politica-footer__marca {
