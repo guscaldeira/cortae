@@ -630,12 +630,10 @@ body.pagina-saibamais {
 .saibamais-footer {
   background-color: var(--cortae-footer-bg);
   border-top: 1px solid #4f4536;
-  padding: 24px 32px;
+  padding: 49px 32px 48px 32px;
 }
  
 .saibamais-footer__container {
-  max-width: 1280px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -649,7 +647,7 @@ body.pagina-saibamais {
   font-size: 24px;
   line-height: 32px;
   color: var(--cortae-gold);
-  margin: 0 0 8px 0;
+  margin: 0;
 }
  
 .saibamais-footer__copyright {
@@ -657,6 +655,7 @@ body.pagina-saibamais {
   line-height: 24px;
   font-weight: 400;
   color: var(--cortae-body-text);
+  text-align: right;
   margin: 0;
 }
  
@@ -765,6 +764,10 @@ body.pagina-saibamais {
 
   .saibamais-footer__container {
     flex-direction: column;
+    text-align: center;
+  }
+
+  .saibamais-footer__copyright {
     text-align: center;
   }
 }
